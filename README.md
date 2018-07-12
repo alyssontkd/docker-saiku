@@ -18,6 +18,21 @@ http://seuhostname:8080
 Crie uma conta e acesse o painel da [Comunidade Meteorite][3] e gere uma licença gratuita para utilização da ferramenta.
 Após executar o contêiner, acesse o endereço `http://seuhostname:8080/upload.html` e faça o upload da licença gerada no site.
 
+## Tratando possíveis erros ao executar o contêiner
+### Erro do Docker quando o encaminhamento IPv4 está desativado (CentOs 7)
+Quando o daemon do docker não pode se conectar ao mundo externo para baixar qualquer coisa durante o tempo de compilação um erro é gerado. Normalmente este erro é encontrado quando você está tentando criar uma imagem docker: **"[Warning] IPv4 forwarding is disabled. Networking will not work."**. Esta mensagem está nos informando será necessário habilitar o encaminhamento IPV4.
+
+Para resolver acesso o arquivo `/usr/lib/sysctl.d/99-docker.conf` com seu editor favorito a adicione, edite ou crie as seguiintes entradas para o arquivo para que o docker possa acessar o mundo externo a sua infraestrutura:
+```
+fs.may_detach_mounts=1
+net.ipv4.ip_forward=1
+```
+Feito isso basta resiniciar o serviço docker da sua máquina e prosseguir com suas atividades.
+```
+[mbacchi@centos7 ~]$ sudo systemctl restart docker
+[mbacchi@centos7 ~]$
+```
+
 [1]: http://saiku-documentation.readthedocs.io/en/latest/installation_guide.html
 [2]: https://hub.docker.com/r/buggtb/saikuce/
 [3]: https://licensing.meteorite.bi/login
