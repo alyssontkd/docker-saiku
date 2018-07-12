@@ -14,7 +14,7 @@ Você pode acessar seu host pelo browser para iniciar o uso da aplicação. As c
 http://seuhostname:8080
 ```
 
-## Lembrete:
+# Lembrete:
 Crie uma conta e acesse o painel da [Comunidade Meteorite][3] e gere uma licença gratuita para utilização da ferramenta.
 Após executar o contêiner, acesse o endereço `http://seuhostname:8080/upload.html` e faça o upload da licença gerada no site.
 
@@ -27,7 +27,7 @@ Para resolver acesso o arquivo `/usr/lib/sysctl.d/99-docker.conf` com seu editor
 fs.may_detach_mounts=1
 net.ipv4.ip_forward=1
 ```
-Feito isso basta resiniciar o serviço docker da sua máquina e prosseguir com suas atividades.
+Feito isso basta reiniciar o serviço docker da sua máquina e prosseguir com suas atividades.
 ```
 [mbacchi@centos7 ~]$ sudo systemctl restart docker
 [mbacchi@centos7 ~]$
