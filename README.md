@@ -9,7 +9,7 @@ docker run -d -p 8080:8080 --name docker-saiku buggtb/saikuce
 ```
 
 ## Saiku
-Você pode acessar seu host pelo browser para iniciar o uso da aplicação. As credenciais padrões (username/password) são admin/admin.
+Você pode acessar seu host pelo browser para iniciar o uso da aplicação. As credenciais padrões (username/password) são `admin/admin`.
 ```
 http://seuhostname:8080
 ```
