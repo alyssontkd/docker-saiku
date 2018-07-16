@@ -4,10 +4,16 @@
 ## Docker
 Baixe uma [buggtb/docker-saikuce][2] imagem e execute-a com o comando abaixo:
 ```bash
-docker pull buggtb/saikuce
-docker run -d -p 8080:8080 --name docker-saiku buggtb/saikuce
+$ docker pull buggtb/saikuce
+$ docker run -d -p 8080:8080 --name docker-saiku buggtb/saikuce
 ```
+Para subir o conteiner mapeando um volume entre sua máquina local e o contêiner utilize o comando:
+```
+$ docker run -d -p <porta_host>:<porta_conteiner> --name <nome_conteiner> -v <caminho_host>:<caminho_imagem> <nome_imagem>
 
+Exemplo:
+$ docker run -d -p 8080:8080 --name docker-saiku -v /usr/share/saiku/saiku-server:/saiku-server buggtb/saikuce:3.17
+```
 ## Saiku
 Você pode acessar seu host pelo browser para iniciar o uso da aplicação. As credenciais padrões (username/password) são `admin/admin`.
 ```
