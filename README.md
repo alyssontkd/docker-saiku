@@ -14,6 +14,24 @@ $ docker run -d -p <porta_host>:<porta_conteiner> --name <nome_conteiner> -v <ca
 Exemplo:
 $ docker run -d -p 8080:8080 --name docker-saiku -v /usr/share/saiku/saiku-server:/saiku-server buggtb/saikuce:3.17
 ```
+
+Para acessar o conteiner use o comando `docker exec`
+```
+docker exec -it <id-conteiner> /bin/bash
+
+Exemplo:
+docker exec -it b955c868b4e1 /bin/bash
+```
+
+Para verificar os contêiners que estão criados, basta o comando:
+```
+docker ps -a
+```
+Para verificar as imagens já baixadas no host, basta o comando:
+```
+docker images
+```
+
 ## Saiku
 Você pode acessar seu host pelo browser para iniciar o uso da aplicação. As credenciais padrões (username/password) são `admin/admin`.
 ```
